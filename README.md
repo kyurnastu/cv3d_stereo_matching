@@ -1,0 +1,1 @@
+# Stereo Matching task for 3D Computer Vision course at CMC MSU
