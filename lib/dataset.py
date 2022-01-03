@@ -183,7 +183,8 @@ class Dataset:
         dataset = tf.data.Dataset.from_tensor_slices(dataset_locations)
         dataset = dataset.map(self._parse_function)
         batched_dataset = dataset.batch(self._settings.batch_size)
-        iterator = batched_dataset.make_one_shot_iterator()
+        #iterator = batched_dataset.make_one_shot_iterator()
+        iterator = batched_dataset
 
         return iterator
 
