@@ -64,6 +64,7 @@ setattr(settings, 'out_cache_path', join('cache', settings.dataset,
                                          settings.phase))
 setattr(settings, 'img_height', 370)
 setattr(settings, 'img_width', 1224)
+print(settings.patch_size, type(settings.patch_size)) 
 setattr(settings, 'half_patch_size', (settings.patch_size // 2))
 setattr(settings, 'half_range', settings.disparity_range // 2)
 setattr(settings, 'num_train', 160)
