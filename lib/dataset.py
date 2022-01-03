@@ -178,26 +178,26 @@ class Dataset:
 
     def _create_train_iterator(self, patch_locations):
         """Create training data iterator."""
-        dataset_locations = patch_locations['valid_locations_train'][:1000]
+        dataset_locations = patch_locations['valid_locations_train'][:10]
 
         dataset = tf.data.Dataset.from_tensor_slices(dataset_locations)
         dataset = dataset.map(self._parse_function)
         batched_dataset = dataset.batch(self._settings.batch_size)
-        #iterator = batched_dataset.make_one_shot_iterator()
+        iterator = batched_dataset.make_one_shot_iterator()
         iterator = batched_dataset
 
         return iterator
 
     def _create_val_iterator(self, patch_locations):
         """Create validation data iterator."""
-        dataset_locations = patch_locations['valid_locations_val'][:1000]
+        dataset_locations = patch_locations['valid_locations_val'][:10]
         # NOTE: Repeat dataset so that we can have 40k iterations.
         dataset_locations = dataset_locations.repeat(2, axis=0)
 
         dataset = tf.data.Dataset.from_tensor_slices(dataset_locations)
         dataset = dataset.map(self._parse_function)
         batched_dataset = dataset.batch(self._settings.batch_size)
-        #iterator = batched_dataset.make_one_shot_iterator()
+        iterator = batched_dataset.make_one_shot_iterator()
         iterator = batched_dataset
 
         return iterator
