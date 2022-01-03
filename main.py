@@ -131,6 +131,7 @@ if settings.phase == 'training':
     LOGGER.info('Initializing training and validation datasets ...')
     training_dataset = Dataset(settings, patch_locations, phase='train')
     validation_dataset = Dataset(settings, patch_locations, phase='val')
+    LOGGER.info('Finished loading datasets ...')
 
     if settings.eval:
         model.restore_model('checkpoints-40000')
