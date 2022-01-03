@@ -36,7 +36,7 @@ parser.add_argument('--exp-name', default='kitti_2012_run', type=str,
                     help='name of experiment')
 parser.add_argument('--log-level', default='INFO', choices = ['DEBUG', 'INFO'],
                     help='log-level to use')
-parser.add_argument('--batch-size', default=32, help='batch-size to use')
+parser.add_argument('--batch-size', default=2, help='batch-size to use')
 parser.add_argument('--dataset', default='kitti_2012', choices=['kitti_2012',
                                                                 'kitti_2015'],
                     help='dataset')
