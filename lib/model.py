@@ -10,7 +10,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 import tensorflow as tf
 from tensorflow.contrib.eager.python import tfe
-import keras.backend as K
+import tensorflow.keras.backend as K
 
 
 Batch = namedtuple('Batch', ['left_patches', 'right_patches', 'labels'])
