@@ -256,6 +256,7 @@ class SiameseStereoMatching(tf.keras.Model):
                 # this later.
                 try:
                     # Training iterations.
+                    self._logger.info("DEBUG dir iterator {}".format( dir(training_dataset.iterator) ))
                     for i in range(fixed_iters):
                         left_patches, right_patches, labels = training_dataset.iterator.get_next()
                         batch = Batch(left_patches, right_patches, labels)
