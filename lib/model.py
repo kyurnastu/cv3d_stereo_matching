@@ -257,7 +257,7 @@ class SiameseStereoMatching(tf.keras.Model):
                 try:
                     # Training iterations.
                     self._logger.info("DEBUG dir iterator {}".format( dir(training_dataset.iterator) ))
-                    for x in training_dataset.iterator
+                    for x in training_dataset.iterator:
                         self._logger.info("DEBUG dir iterator {}".format( dir(x) ))
                         break
                     for i in range(fixed_iters):
