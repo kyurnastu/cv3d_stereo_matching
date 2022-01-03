@@ -41,8 +41,8 @@ parser.add_argument('--dataset', default='kitti_2012', choices=['kitti_2012',
                                                                 'kitti_2015'],
                     help='dataset')
 parser.add_argument('--seed', default=3, help='random seed')
-parser.add_argument('--patch-size', default=37, help='patch size from left image')
-parser.add_argument('--disparity-range', default=201, help='disparity range')
+parser.add_argument('--patch-size', type=int, default=37, help='patch size from left image')
+parser.add_argument('--disparity-range', type=int, default=201, help='disparity range')
 parser.add_argument('--learning-rate', default=0.01, help='initial learning rate')
 parser.add_argument('--find-patch-locations', default=False,
                     help='find and store patch locations')
